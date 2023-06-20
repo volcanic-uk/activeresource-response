@@ -1,10 +1,12 @@
 ## Activeresource-response 
-####This gem adds possibility to access http response (Net::HTTPResponse) object from result (single object or collection) of activeresource call (methods : find, all, first, last, get )
+#### This gem adds possibility to access http response (Net::HTTPResponse) object from result (single object or collection) of activeresource call (methods : find, all, first, last, get )
 
 [![Build Status](http://img.shields.io/travis/Fivell/activeresource-response.png)](https://travis-ci.org/Fivell/activeresource-response)
 [![Dependency Status](http://img.shields.io/gemnasium/Fivell/activeresource-response.svg)](https://gemnasium.com/Fivell/activeresource-response)
 [![Coverage Status](http://img.shields.io/coveralls/Fivell/activeresource-response.svg)](https://coveralls.io/r/Fivell/activeresource-response)
 
+#### SimpleDelegator
+The changes present in this fork changes the response from ActiveResource. ActiveResource wraps nil objects in SimpleDelegator class. This fork changes the response to return nil instead of SimpleDelegator(nil).
 
 #### Why It can be used?
 Such functionallity can be used for easily implementing pagination in a REST API so that an ActiveResource client can navigate paginated results.
