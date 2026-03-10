@@ -1,5 +1,9 @@
-require 'coveralls'
-Coveralls.wear!
+begin
+  require 'coveralls'
+  Coveralls.wear!
+rescue LoadError
+  # coveralls is optional and unavailable on modern Ruby
+end
 require 'minitest/autorun'
 require 'i18n'
 lib = File.expand_path("#{File.dirname(__FILE__)}/../lib")
