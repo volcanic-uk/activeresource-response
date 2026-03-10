@@ -59,7 +59,7 @@ module ActiveResourceResponse
       end
 
       def wrap_result(result)
-        return result if result.nil?
+        return if result.nil?
 
         result = SimpleDelegator.new(result) if result.frozen?
         result.instance_variable_set(:@http_response, connection.http_response)
