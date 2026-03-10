@@ -29,7 +29,7 @@ require_relative 'test_helper'
 require "active_resource_response/lint"
 ActiveResource::Base.send :include, ActiveResourceResponse::Lint
 
-class ActiveResourceResponseLintTest < Minitest::Test
+class ActiveResourceResponseLintTest <  MiniTest::Test
 
   include ActiveModel::Lint::Tests
 
