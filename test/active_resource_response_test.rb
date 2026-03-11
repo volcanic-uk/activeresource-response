@@ -22,7 +22,7 @@
 #++
 require_relative 'test_helper'
 
-class ActiveResourceResponseTest < MiniTest::Test
+class ActiveResourceResponseTest < Minitest::Test
 
 
   def setup
@@ -145,6 +145,12 @@ class ActiveResourceResponseTest < MiniTest::Test
   def test_model_naming_methods
       street = Country.find(1)
       assert street.class.respond_to?(:model_name)
+  end
+
+  def test_wrap_result_with_nil
+    result = Country.wrap_result(nil)
+    assert_nil result
+    refute nil.respond_to?(:http), "NilClass should not be polluted with http_response method"
   end
 
 end
